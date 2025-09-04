@@ -14,7 +14,11 @@
 
 # 🔎 Ithaka Smart Search [WIP]
 
-Ithaka Smart Search provides an intuitive way to ...
+Ithaka Smart Search provides an intuitive way to classify user queries in real time and route them to the most relevant backend—traditional search engines, AI search platforms, or large language models.
+
+At its core, Ithaka compiles a small decision model (≈3M parameters) into WebAssembly, enabling inference directly inside the browser extension environment. The model achieves sub-90 ms latency on consumer hardware by combining TensorFlow graph execution with quantization and pruning. This ensures that Ithaka introduces almost no additional delay compared to native Google or Perplexity search, while offering adaptive query routing that optimizes for relevance and cost.
+
+Ithaka aims to provide native AI integration into users' existing workflows, allowing better access in the age of information without requiring additional effort or knowledge.
 
 <div align="center">
 <img src="https://github.com/ethbak/ithaka-smart-search/blob/main/images/ithaka-workflow.png?raw=true" alt="flow diagram" width="750"/>
@@ -23,6 +27,14 @@ Ithaka Smart Search provides an intuitive way to ...
 
 # ✨ Functionality
 
+## Decision Model
+
+Ithaka routes non-URL queries through a lightweight decision model that runs entirely on the user’s browser or desktop. The model was compressed from a larger general-purpose transformer via pruning and quantization to be optimized for low latency, delivering inference in under 90 ms without noticeable impact on user experience.
+
+Each query is classified into one of three categories: web search, AI search, or generative AI, with routing handled accordingly. Expansion to additional categories such as image generation and domain-specific models is on the roadmap.
+
+Planned features also include a feedback-driven retraining loop, allowing user corrections to be logged and incorporated into fine-tuned versions of the model, steadily improving routing accuracy over time.
+
 ## Browser Integration
 
 <div align="left">
@@ -30,32 +42,24 @@ Ithaka Smart Search provides an intuitive way to ...
     <hr style="border: none; height: 1px; background-color: purple; width: 100%;">
 </div>
 
-Description
+Ithaka’s browser extension integrates with Chrome and Firefox to capture queries directly from the search bar or context menus. The decision model runs locally, classifying each query and instantly routing it to the most relevant destination.
 
- 
+Queries are transparently redirected to Google, Perplexity, or an LLM interface, with no extra steps required from the user. This design keeps search seamless while adding AI-powered routing behind the scenes.
 
-## Raycast Integration
+The extension embeds into the search bar like a standard search engine, with controls to enable or disable routing and submit feedback on incorrect decisions.
+
+## [Future] Raycast Integration
 
 <div align="left">
   <img src="https://github.com/ethbak/ithaka-smart-search/blob/main/images/ithaka-raycast.png?raw=true" alt="browser integration" width="550"/>
     <hr style="border: none; height: 1px; background-color: purple; width: 100%;">
 </div>
 
-Description
-
-## Decision Model
-
-Description
+Ease of use is a core tenet of Ithaka's design model. To improve this in the future, Ithaka will provide Raycast support to expose the tool as a global command on macOS. Other media of integration will also be explored.
 
 ## [Future] User Customization
 
-<div align="left">
-  <img src="https://github.com/ethbak/ithaka-smart-search/blob/main/images/ai-logos.png?raw=true" alt="browser integration" width="550"/>
-    <hr style="border: none; height: 1px; background-color: purple; width: 100%;">
-</div>
-
-Description
-
+Ithaka aims to provide users with significant functionality for customization and integration with other AI tools, making use of Retrieval Augmented Generation (RAG) to allow custom routing instructions and Model Context Protocol (MCP) to facilitate connection to additional AI models. 
 
 # 📀 Technologies / Dependencies
 
@@ -70,7 +74,7 @@ Description
 
 ### Latency
 
-Ithaka provides _sub-90 ms_ routing time (time from user input to decision) for non-URL queries. This represents only a moderate increase in latency for Google searches and a negligeable effect on AI search engine's and general LLM's time-to-first-token.
+Ithaka provides _sub-90 ms_ routing time (time from user input to decision) for non-URL queries. This represents only a moderate increase in latency for Google searches and a negligible effect on AI search engines' and general LLMs' time-to-first-token.
 
 | Tool | Latency | Ithaka Routing Percentage|
 |------|----------|------|
@@ -82,17 +86,17 @@ Ithaka provides _sub-90 ms_ routing time (time from user input to decision) for 
   
 ### Accuracy
 
-Decision model accuracy was measured with an LLM reward judge using a modified implementation of Gemp et al.'s [Steering Language Models with Game-Theoretic Solvers](https://arxiv.org/pdf/2402.01704) on a large data set of real, english-language web search and AI queries. 
+Decision model accuracy was measured with an LLM reward judge using a modified implementation of Gemp et al.'s [Steering Language Models with Game-Theoretic Solvers](https://arxiv.org/pdf/2402.01704) on a large data set of real, English-language web search and AI queries. 
 
 **Decision accuracy:** `96.3%`
 
-# ❓ Where's the Code?
+# ❓ Where's the code?
 
-Ithaka, including it's browser extension, raycast extension, decision model, and other code, is propreitary technology and therefore not available for public use. 
+Ithaka, including its browser extension, Raycast extension, decision model, and other code, is proprietary technology and therefore not available for public use. 
 
 This README file simply serves to provide a detailed depiction of my contribution and experience gained from the project.
 
-# ❓ When will the Extension be Published?
+# ❓ When will the extension be published?
 
 I'm currently balancing a few different priorities... More info soon!
 
