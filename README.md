@@ -14,7 +14,7 @@
 
 # 🔎 Ithaka Smart Search [WIP]
 
-Description
+Ithaka Smart Search provides an intuitive way to ...
 
 <div align="center">
 <img src="https://github.com/ethbak/ithaka-smart-search/blob/main/images/ithaka-workflow.png?raw=true" alt="flow diagram" width="750"/>
@@ -47,7 +47,7 @@ Description
 
 Description
 
-## User Customization
+## [Future] User Customization
 
 <div align="left">
   <img src="https://github.com/ethbak/ithaka-smart-search/blob/main/images/ai-logos.png?raw=true" alt="browser integration" width="550"/>
@@ -84,7 +84,7 @@ Ithaka provides _sub-90 ms_ routing time (time from user input to decision) for 
 
 Decision model accuracy was measured with an LLM reward judge using a modified implementation of Gemp et al.'s [Steering Language Models with Game-Theoretic Solvers](https://arxiv.org/pdf/2402.01704) on a large data set of real, english-language web search and AI queries. 
 
-
+**Decision accuracy:** `96.3%`
 
 # ❓ Where's the Code?
 
