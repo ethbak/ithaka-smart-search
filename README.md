@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/ethbak/ithaka-smart-search/main/images/ithaka-mvp-banner.png" alt="ithaka_banner" width="550"/>
+<img src="https://raw.githubusercontent.com/ethbak/ithaka-smart-search/main/images/ithaka-mvp-banner.png" alt="ithaka_banner" width="650"/>
 
 <hr style="border: none; height: 2px; background-color: purple; width: 100%;">
 
@@ -18,21 +18,32 @@ Desc1
 
 Desc2
 
+<div align="left">
+<img src="https://raw.githubusercontent.com/ethbak/ithaka-smart-search/main/images/ithaka-workflow.PNG" alt="flow diagram" width="550"/>
+  <hr style="border: none; height: 1px; background-color: purple; width: 100%;">
+</div>
+
 # ✨ Functionality
 
-## Function 1
+## Browser Integration
 
 Desc1
 
 Desc2
 
-## Function 2
+## Raycast Integration
 
 Desc1
 
 Desc2
 
-## Function 3
+## Decision Model
+
+Desc1
+
+Desc2
+
+## User Customization
 
 Desc1
 
